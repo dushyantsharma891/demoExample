@@ -1,10 +1,4 @@
-/** #################################
-	Project		 : Bobotracker
-	Module		 : Node Server
-    Created		 : 2021-11-14
-	Developed By : Anil Guleria 
-    Description	 : Routes file.
-*/
+
 
 const _commonModel = require('../models/configCommon'),
       helper	   = require('../../configCommon/helpers');
