@@ -2,20 +2,7 @@
 const request 		  	= require('request'),
     url 			   	= require('url'),
     middle 	        	= require('./middleware'),
-    _AUTHOBJ            = require('../controllers/auth'),
-	_USEROBJ 			= require('../controllers/user'),
-	_CONFIGOBJ 			= require('../controllers/configuration'),
-    _POSTOBJ            = require('../controllers/post'),
-	_USERPROFILEOBJ     = require('../controllers/upload_image'),
-	_FOLLOWOBJ          = require('../controllers/follow'),
-	_CHATSOBJ           = require('../controllers/chats'),
-	_CONTESTOBJ         = require('../controllers/contests'),
-	_BROADCASTOBJ       = require('../controllers/live_broadcast'),
-	_ADSOBJ             = require('../controllers/ads'),
-	_STORESOBJ          = require('../controllers/stores'),
-	_REPORTOBJ          = require('../controllers/report'),
-	_notification       = require('../controllers/notification'),
-	_PAGESOBJ           = require('../controllers/pages');                   
+    _AUTHOBJ            = require('../controllers/auth');                   
     // const validateRequest = SchemaValidator(true);
 
 const genericHandler = (req, res, next) => {
