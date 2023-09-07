@@ -19,7 +19,7 @@ let userProfileObj      = {};
 * This function is used to upload user's profile image in AWS S3 bucket.
 * @param     	:
 * @developer 	: 
-* @modified	    : Anil Guleria
+* @modified	    : 
 */
 userProfileObj.uploadProfileImage = async (req, res) => {
 
@@ -295,7 +295,7 @@ if ( userId ) {
 * This function is used to upload upload Business Image in AWS S3 bucket.
 * @param     	:
 * @developer 	: 
-* @modified	    : Anil Guleria
+* @modified	    : 
 */
 userProfileObj.uploadBusinessImage = async (req, res) => {
 

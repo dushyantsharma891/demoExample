@@ -1,23 +1,4 @@
-/**
- * Copyright (C) A Cube Technologies - All Rights Reserved
- * Unauthorized copying of this file, via any medium is strictly prohibited
- * Proprietary and confidential. Dissemination of this information or reproduction 
- * of this material is strictly forbidden unless prior written permission is obtained
- * from A Cube Technologies.
---[[
-              _____      _            _______        _                 _             _           
-     /\      / ____|    | |          |__   __|      | |               | |           (_)          
-    /  \    | |    _   _| |__   ___     | | ___  ___| |__  _ __   ___ | | ___   __ _ _  ___  ___ 
-   / /\ \   | |   | | | | '_ \ / _ \    | |/ _ \/ __| '_ \| '_ \ / _ \| |/ _ \ / _` | |/ _ \/ __|
-  / ____ \  | |___| |_| | |_) |  __/    | |  __/ (__| | | | | | | (_) | | (_) | (_| | |  __/\__ \
- /_/    \_\  \_____\__,_|_.__/ \___|    |_|\___|\___|_| |_|_| |_|\___/|_|\___/ \__, |_|\___||___/
-                                                                                __/ |            
-                                                                               |___/             
---]]                                                                                                                                                                                                                                                                                                                    
- * Written By  : Dushyant Sharma
- * Description : For All The Notification
- * Modified By :
- */
+
 
 
 const nodeMailer        = require('nodemailer'),
@@ -32,15 +13,15 @@ const nodeMailer        = require('nodemailer'),
     fcm                 = require('fcm-node'),
     firebaseConfig      = {
         "type"                          : "service_account",
-        "project_id"                    : "glimpsters-16e83",
+        "project_id"                    : "example-16e83",
         "private_key_id"                : "0e60cc5159bc2d8ed6a05bc7707272590466eb18",
-        "private_key"                   : "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDIII2TU87qy64L\nGeFk9HIxbykNzg/exVXXQKs5g93Ks5HusvFWqb0edu0ymibbbQIKQ4Y7R1egVzqO\n7bh7uaNuXkjIS9tloBfVpc9tw2aR2HXCbEvyKj7Kaqr5VJPATSRKoTWAGb0gG87v\nuiA5Wddc3HtqAYNa9/Dl9RtfGWdVsquJrAz+Y8YPcv5Ay/Bo4Yxiv/8jKwMWEFjj\nswht3ehX6Vpt0bKQdquhaud7GFONNriFWIbBLqfWNLi8AbjxwbJpCaVZ+PyrbYzB\n7mp2bw0RNz7iEkF/Xg+Nxkrb5gKNMA7fRJXEBCOCojgIY4o9mpblOqyG7yunfCpz\nz2Xd3z8BAgMBAAECggEAGiu6TUA8zehRhp1yzptHl6lcFV8TejlqJAUOny3cbOvr\nXetus2ZCbLUhXb2vmSr52lJsP7JGW5nXTDuless9pmrpWlrOgngGGz1cu+joBT3p\nCxd9yFm37mE2ofZqf/pWkEqL+Yg5evUdVwI1wT+Qx1GvSJ88CJhl8LHgoMtsqlXA\n3erXR1SjkunATv1619WJVVB60cInydCH2FHWVkhY4SrP470x0Mx0N6ZacJ+lCZn9\nH5YgtrnfPtLNFT0Xn9PL5FgCj3TKD/0GYwtB/VeK4ikcmLi47POKggc0Djl5smLE\nVPFV+eDi8aGMOjlA2p52AhruNmCXfGuGdui6TCObJQKBgQDvObtqu6m5FHrjUi4h\n0LiyI7mDhLytkpouO3UGt7oZGl6LMzU3y2ifNzacA8SuCHWkx/QVePJ0g5GWtXWE\nW8jHOCJ+rWTMFtSBj1tU8DSu+WZFmdMW95L5CjUOEeko7fj5VBGW0oB3FUHj2UE6\nUDatIiNkgEYbx5uBFJEOeuHGKwKBgQDWKPpJPdIMrNQGZh1ZV+WW0rDPcsBK0h73\nBor5J61UEav0Pe8vMAr7N2CmV8BJIbuW0v29IzztnTt+vgv5u8GB5LTNYJkLDMOg\nuiW6LCSD+kjU00Y8br927caGHkQu4uruzOoLbEGa96l0vWSNe/ZwYaKlxTM6HvlC\nKBOzNmgFgwKBgA7BFsgMbvlVRAcFKIc5YkrKXUS5SRHDevLjA+K4LigiMjaPn/ai\n+v7m3t1cdiLtrqPNGUbBwOJiwvXylx7ksktnMOlzNEZKGi0rdEyWzAkGpMIiLJy8\nBDqL4J3PiPvXQYXPI46TyQyPKRMucRFxpQ2kj15BcxF/jB238QJdndMlAoGAWPzu\nA0EM5vdpor8LsvQzEli533lvLafh9gNh++Xgv+4X5YVWveTYq0p3fqc33yuFJ0bE\n6LKbvqB2+FM/5qV94tuFxVE+RrknEMJIqvNsuOpnGQgxRys9o81pkJFDA7iGpnO/\nTL/PAvWmFDwebCv2Wvw2+WrXvm7gY/0DMpSI5MECgYAYXO6Eh/YDSBUAwD+g622V\n0SqkKCQxIBUn7CXdO26QS3UdfM0kKFpXSN44HJB7l7h000EJDsDPenjwLe3ARBji\n8GpxJ7ZiW8V8vTbGYn/UzOAGa+3kC+K47GBsNt6wbwrZTlsxOcUkQXQxjwfV28S7\nbamT6MexJjUCv8I2mANlsg==\n-----END PRIVATE KEY-----\n",
-        "client_email"                  : "firebase-adminsdk-h10oe@glimpsters-16e83.iam.gserviceaccount.com",
+        "private_key"                   : "-----BEGIN PRIVATE KEY-----\example\n-----END PRIVATE KEY-----\n",
+        "client_email"                  : "firebase-adminsdk-h10oe@example-16e83.iam.gserviceaccount.com",
         "client_id"                     : "101480015761093498777",
         "auth_uri"                      : "https://accounts.google.com/o/oauth2/auth",
         "token_uri"                     : "https://oauth2.googleapis.com/token",
         "auth_provider_x509_cert_url"   : "https://www.googleapis.com/oauth2/v1/certs",
-        "client_x509_cert_url"          : "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-h10oe%40glimpsters-16e83.iam.gserviceaccount.com",
+        "client_x509_cert_url"          : "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-h10oe%40example-16e83.iam.gserviceaccount.com",
         "universe_domain"               : "googleapis.com"
     },
     FCM = new fcm(firebaseConfig);
